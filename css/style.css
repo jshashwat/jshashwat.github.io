@@ -899,3 +899,9 @@ border-radius: 50%;
   margin-right: auto;
   width: 60%;
 }
+
+.p_justify
+{
+text-align: justify;
+  text-justify: inter-word;
+}
