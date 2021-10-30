@@ -140,7 +140,7 @@
 		<section class="section transprant-bg pclear secPadding">
 			<div class="container no-view" data-animation-effect="fadeIn">
 				<h1 id="abstract" class="title text-center">Problem Statement</h1>
-				<p>Customer experience is one of the most important factors that define the success of any business. 
+				<p class = "p_justify">Customer experience is one of the most important factors that define the success of any business. 
 					In a busy world like ours, nobody wants to wait in long queues. 
 					It can be just a coffee shop or a queue at the airport! As technology gets more advanced day by day, 
 					it is becoming easier to install computer vision techniques at places like these to help in reducing the waiting time for the customers. 
@@ -149,7 +149,7 @@
 
 					
 					
-			<p>We will use two techniques to calculate the throughput of queues: <a target="_blank" href="https://learnopencv.com/histogram-of-oriented-gradients/">HoG (Histogram of Oriented Gradients)</a> and 
+			<p class = "p_justify">We will use two techniques to calculate the throughput of queues: <a target="_blank" href="https://learnopencv.com/histogram-of-oriented-gradients/">HoG (Histogram of Oriented Gradients)</a> and 
 				<a target="_blank" href="https://pjreddie.com/darknet/yolo/">YOLO (You Only Look Once)</a>, a Deep Learning model for object detection. 
 				We want to compare the results of these two techniques for queue tracking applications. 
 				Although YOLO is expected to work very well with slow as well as fast paced objects in video feeds, we expect the results from HoG to be comparable because of relatively slow paced movement of objects in video feeds
@@ -220,9 +220,14 @@
 							</div>
 						-->
 						<li><i class="fa fa-arrow-circle-right pr-10 colored"></i>Developing a user-interface and backend implementation 
-							to assist with tracking queues in real time using the two independent techniques.</li>
-						<li><i class="fa fa-arrow-circle-right pr-10 colored"></i>Compare the results from both techniques used (HOG and YOLO).</li> 
-						<p>The technical approach we look to deploy is depicted in the following graphic followed by its explanation.</p>
+							to assist with tracking queues in real time using the two independent techniques (HOG and YOLO).</li>
+						<li><i class="fa fa-arrow-circle-right pr-10 colored"></i>Compare the results from both techniques used. We will compare the following parameters.</li> 
+							<ul>
+								<li>Cumulative averaged throughput time for both the techniques</li>
+								<li>Processing time per frame for both the techniques and output feed FPS.</li>
+							</ul>
+						<br>
+						<p class = "p_justify">The technical approach we look to deploy is depicted in the following graphic followed by its explanation.</p>
 						<br>
 						<br>
 						<h2 class="title text-center"> <span><strong>Approach Graphic</strong></span></h2>
@@ -236,10 +241,10 @@
 								<img src="images/pipeline.PNG" alt="" class="img-center">
 								<div class="space"></div>
 						</div>
-						<p>We will develop a User Interface that takes in input feed from camera in read time or recorded video feeds.
+						<p class = "p_justify">We will develop a user interface that takes in input feed from camera in real-time or recorded video feeds.
 							 The video frames are fetched and fed to our backend implementation where we process the frame independently 
 							 using two object detection techniques 1) HOG (using our pre-trained HOG Detector) and 2) YOLO Object Detection.
-							  We locate an imaginary trip line at the start of the queue and monitor the location of our detected object with 
+							  We locate an imaginary trip line at the start of the queue and monitor the location of our detected objects(people) with 
 							  respect to this trip line. Whenever a person crosses the trip line, we calculate the throughput time and average 
 							  it cumulatively. This tells us real-time efficiency of the queue which can be used as an information to monitor such
 							   data for multiple queues concurrently and manage the traffic accordingly.
@@ -329,154 +334,42 @@
 		<section class="section secPadding">
 			<div class="container">
 				<h1 class="text-center title" id="portfolio">Experiments and Results</h1>
+				<br>
 				<div class="separator"></div>
-				<p><strong>Dataset Used:</strong> <a target="_blank" href="https://cvgl.stanford.edu/projects/collective/collectiveActivity.html">Collective Activity Dataset</a>
-					: We will leverage Class ID 4 in the dataset as our Data for Queuing Application. Other classes can provide a good dataset for 
-					detector training.</p>
-				<br>	
 
+				<p class = "p_justify"><strong>Code Development and Usage:</strong> We will develop our own code for the HOG detector training and data set
+				preprocessing. Preprocessing includes extracting objects(people) from the training dataset and feed them for training our HOG detector. Additionally the input video feed to our framework
+				 will be stabilized. We will also develop a graphical user interface to showcase realtime detection and throughput calculation. We
+				will borrow YOLO as an existing technique and use our trained HOG detector for object detection.</p>
+				<p class = "p_justify"><strong>Dataset Used:</strong> <a target="_blank" href="https://cvgl.stanford.edu/projects/collective/collectiveActivity.html">Collective Activity Dataset</a>
+					: We will leverage Class ID 4 in the dataset as our Data for Queuing Application. Other class IDs will provide a good dataset for 
+					detector training.</p>
+				<p><strong>Project Success:</strong></p>
+				<li>Succesfully training HoG on our training data set and collecting the throughput data.</li>
+				<li>Sucessfully executing YOLO on our data set and collecting the throughput data.</li>
+				<li>Compare and draw conclusions from the results.</li>
+				<br>
+				<p class = "p_justify"><strong>Expectations and Potential Outcomes:</strong>
+					Our expectation is for the HOG Object Detection to perform relatively closer to YOLO for the application use case. 
+					This is based on the fact that relative motion of objects in queues is very slow which is accompanied by near fixed
+					scaling depth for objects for a fixed camera system at a certain orientation.
+					The cumulative average throughput times for both the techniques and people counter will be deciding factors for accuracy comparisons
+					between the two. If there are shortfalls in the HOG technique, we wish to investigate it. For future scope, a hybrid
+					technique which leverages intermittent information from applying YOLO whenever the confidence relating to detection using
+					HOG goes below a threshold can be deployed.</p>
+				<br>	
+				
+				<div class="space"></div>
+				<img src="images/example.jpg" alt="" class="img-center">
+				<br>
+				<p class="text-center"><strong>Expected result on one of the dataset video frame</strong></p>
+				<div class="space"></div>
+				
+		</div>
 			</div>
 		</section>
 		<!-- section end -->
-<!-- 
-
-		<section class="default-bg secPadding">
-			
-<div class="container">
-  <div class="row">
-    <div class='col-md-offset-2 col-md-8 text-center'>
-    <h2>Clients Testimonials</h2>
-    </div>
-  </div>
-  <div class='row'>
-    <div class='col-md-offset-2 col-md-8'>
-      <div class="carousel slide" data-ride="carousel" id="quote-carousel">
-        
-        <ol class="carousel-indicators">
-          <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
-          <li data-target="#quote-carousel" data-slide-to="1"></li>
-          <li data-target="#quote-carousel" data-slide-to="2"></li>
-        </ol>
-        
-        
-        <div class="carousel-inner">
-        
-          
-          <div class="item active">
-            <blockquote>
-              <div class="row">
-                <div class="col-sm-3 text-center">
-                  <img class="img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" style="width: 100px;height:100px;">
-                </div>
-                <div class="col-sm-9">
-                  <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit!</p>
-                  <small>Someone famous</small>
-                </div>
-              </div>
-            </blockquote>
-          </div>
-          
-          <div class="item">
-            <blockquote>
-              <div class="row">
-                <div class="col-sm-3 text-center">
-                  <img class="img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/mijustin/128.jpg" style="width: 100px;height:100px;">
-                </div>
-                <div class="col-sm-9">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor nec lacus ut tempor. Mauris.</p>
-                  <small>Someone famous</small>
-                </div>
-              </div>
-            </blockquote>
-          </div>
-         
-          <div class="item">
-            <blockquote>
-              <div class="row">
-                <div class="col-sm-3 text-center">
-                  <img class="img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/keizgoesboom/128.jpg" style="width: 100px;height:100px;">
-                </div>
-                <div class="col-sm-9">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut rutrum elit in arcu blandit, eget pretium nisl accumsan. Sed ultricies commodo tortor, eu pretium mauris.</p>
-                  <small>Someone famous</small>
-                </div>
-              </div>
-            </blockquote>
-          </div>
-        </div>              
-      </div>                          
-    </div>
-  </div>
-</div>
--->
-	<!-- 	
-
-		<footer id="footer">
-
-			
-			<div class="footer section">
-				<div class="container">
-					<h1 class="title text-center" id="contact">Contact Us</h1>
-					<div class="space"></div>
-					<div class="row">
-						
-						<div class="col-sm-6">
-							<div class="footer-content">
-								<form role="form" id="footer-form">
-									<div class="form-group has-feedback">
-										<label class="sr-only" for="name2">Name</label>
-										<input type="text" class="form-control" id="name2" placeholder="Name" name="name2" required>
-										<i class="fa fa-user form-control-feedback"></i>
-									</div>
-									<div class="form-group has-feedback">
-										<label class="sr-only" for="email2">Email address</label>
-										<input type="email" class="form-control" id="email2" placeholder="Enter email" name="email2" required>
-										<i class="fa fa-envelope form-control-feedback"></i>
-									</div>
-									<div class="form-group has-feedback">
-										<label class="sr-only" for="message2">Message</label>
-										<textarea class="form-control" rows="8" id="message2" placeholder="Message" name="message2" required></textarea>
-										<i class="fa fa-pencil form-control-feedback"></i>
-									</div>
-									<input type="submit" value="Send" class="btn btn-default">
-								</form>
-							</div>
-						</div>
-						
-						<div class="col-sm-6">
-							<div class="footer-content">
-								
-
-							<div class="widget-content">
-
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel nam magnam natus tempora cumque, aliquam deleniti voluptatibus voluptas. Maecenas ultrices finibus erat sit amet auctor. Curabitur et metus laoreet, fermentum quam sagittis, cursus augue. </p><br/>
-
-								<p class="contacts"><i class="fa fa-map-marker"></i> 1508 Kembery Drive, Chicago, IL 60605 </p>
-
-								<p class="contacts"><i class="fa fa-phone"></i> 202-314-1583</p>
-
-								<p class="contacts"><i class="fa fa-envelope"></i> support@biss.com</p>
-
-							
-
-							</div>
-
-						</aside>
-								<ul class="social-links">
-									<li class="facebook"><a target="_blank" href="#"><i class="fa fa-facebook"></i></a></li>
-									<li class="twitter"><a target="_blank" href="#"><i class="fa fa-twitter"></i></a></li>
-									<li class="googleplus"><a target="_blank" href="#"><i class="fa fa-google-plus"></i></a></li>
-									<li class="skype"><a target="_blank" href="#"><i class="fa fa-skype"></i></a></li>
-									<li class="linkedin"><a target="_blank" href="#"><i class="fa fa-linkedin"></i></a></li>
-									<li class="youtube"><a target="_blank" href="#"><i class="fa fa-youtube"></i></a></li> 
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
--->		
+	
 		<footer>
 			
 			<div class="subfooter">
