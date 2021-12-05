@@ -139,7 +139,7 @@
 <!-- section start --> 
 		<section class="section transprant-bg pclear secPadding">
 			<div class="container no-view" data-animation-effect="fadeIn">
-				<h1 id="abstract" class="title text-center">Problem Statement</h1>
+				<h1 id="abstract" class="title text-center">Abstract and Introduction</h1>
 				<p class = "p_justify">Customer experience is one of the most important factors that define the success of any business. 
 					In a busy world like ours, nobody wants to wait in long queues. 
 					It can be just a coffee shop or a queue at the airport! As technology gets more advanced day by day, 
@@ -164,78 +164,95 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<h1 id="teaser" class="title text-center"> <span>Approach</span></h1>
+						<h1 id="teaser" class="title text-center"> <span>Approach and Judgment calls</span></h1>
 						<p>Our idea involves three major tasks: </p>
 							 
 							 
-							 <ul class="list-unstyled">
-								<li><i class="fa fa-arrow-circle-right pr-10 colored"></i>Training an object(people) detector using Histogram of 
-									Oriented Gradients (feeding HOG descriptors from training data set to a Linear Support Vector Machine).</li>
-							<!--
-								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"></div>	
-								<div class="panel panel-default">
-										<div class="panel-heading" role="tab" id="headingOne">
-											<h4 class="panel-title">
-												<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-													HOG Detector Training Pipeline
-												</a>
-											</h4>
-										</div>
-										<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-											<div class="panel-body">
-												Training an object(people) detector using Histogram of 
-												Oriented Gradients (feeding HOG descriptors from training data set to a Linear Support Vector Machine).
-											</div>
-										</div>	
-								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading" role="tab" id="headingTwo">
-										<h4 class="panel-title">
-											<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-												User Interface and Backend
-											</a>
-										</h4>
-									</div>
-									<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-										<div class="panel-body">
-											Developing a user-interface and backend implementation 
-											to assist with tracking queues in real time using the two independent techniques.
-										</div>
-									</div>
-								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading" role="tab" id="headingThree">
-										<h4 class="panel-title">
-											<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-												Result Comparison
-											</a>
-										</h4>
-									</div>
-									<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-										<div class="panel-body">
-											Compare the results from both techniques used (HOG and YOLO).
-										</div>
-									</div>
-								</div>
-							</div>
-						-->
-						<li><i class="fa fa-arrow-circle-right pr-10 colored"></i>Developing a user-interface and backend implementation 
-							to assist with tracking queues in real time using the two independent techniques (HOG and YOLO).</li>
-						<li><i class="fa fa-arrow-circle-right pr-10 colored"></i>Compare the results from both techniques used. We will compare the following parameters.</li> 
+						<ul class="list-unstyled">
+							<li><i class="fa fa-arrow-circle-right pr-10 colored"></i>Data preprocessing</li>
 							<ul>
-								<li>Cumulative averaged throughput time for both the techniques</li>
-								<li>Processing time per frame for both the techniques and output feed FPS.</li>
+								<li>Crop and resize: </li>
+								<li>Gaussian blur: </li>
+								<li>Backgroung subtractor MOG: </li>
 							</ul>
-						<br>
-						<p class = "p_justify">The technical approach we look to deploy is depicted in the following graphic followed by its explanation.</p>
-						<br>
-						<br>
-						<h2 class="title text-center"> <span><strong>Approach Graphic</strong></span></h2>
-						
-						<div class="space"></div>
-								<img src="images/section-image-2.PNG" alt="" class="img-center">
-								<div class="space"></div>
+							<!--
+			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"></div>
+			<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingOne">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+								HOG Detector Training Pipeline
+							</a>
+						</h4>
+					</div>
+					<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+						<div class="panel-body">
+							Training an object(people) detector using Histogram of
+							Oriented Gradients (feeding HOG descriptors from training data set to a Linear Support Vector Machine).
 						</div>
+					</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingTwo">
+					<h4 class="panel-title">
+						<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							User Interface and Backend
+						</a>
+					</h4>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+					<div class="panel-body">
+						Developing a user-interface and backend implementation
+						to assist with tracking queues in real time using the two independent techniques.
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingThree">
+					<h4 class="panel-title">
+						<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							Result Comparison
+						</a>
+					</h4>
+				</div>
+				<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+					<div class="panel-body">
+						Compare the results from both techniques used (HOG and YOLO).
+					</div>
+				</div>
+			</div>
+		</div>
+	-->
+							<li>
+								<i class="fa fa-arrow-circle-right pr-10 colored"></i>HoG
+							</li>
+							<ul>
+								<li>Parameter Tuning</li>
+								<li>Algorithm</li>
+							</ul>
+
+							<li><i class="fa fa-arrow-circle-right pr-10 colored"></i>YOLO</li>
+							<ul>
+								<li>Parameter Tuning</li>
+								<li>Algorithm</li>
+							</ul>
+							<li><i class="fa fa-arrow-circle-right pr-10 colored"></i>Comparison</li>
+							<ul>
+								<li>Runtime</li>
+								<li>FPS</li>
+								<li>Accuracy</li>
+								<li>Throughput</li>
+							</ul>
+							<br>
+							<p class="p_justify">The technical approach we look to deploy is depicted in the following graphic followed by its explanation.</p>
+							<br>
+							<br>
+							<h2 class="title text-center"> <span><strong>Approach Graphic</strong></span></h2>
+
+							<div class="space"></div>
+							<img src="images/section-image-2.PNG" alt="" class="img-center">
+							<div class="space"></div>
+</div>
 						<h2 class="title text-center"> <span><strong>Training Pipeline</strong></span></h2>
 						<div class="space"></div>
 								<img src="images/pipeline.PNG" alt="" class="img-center">
