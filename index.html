@@ -152,7 +152,6 @@
 				 In our approach, we have implemented the detection using two algorithms: HoG and YOLO. The aim of this project is to compare the characteristics of HoG and YOLO. Upon experimentation, 
 				 we realised that HoG is must faster than YOLO, however the accuracy is much better in YOLO.
 			</p>
-				
 			</div>			  
 		</section>
 		<!-- section end -->
@@ -186,9 +185,9 @@
 							 
 							 Here is the basic setup for the algorithms used in the framework.
 							 <ul class="list-unstyled">
-								<li><i class="fa fa-arrow-circle-right pr-10 colored"></i>Data preprocessing</li>
+								<li><i class="fa fa-arrow-circle-right pr-10 colored"></i>Data Preprocessing</li>
 									<ul>
-										<li>Capture Frames from Input Feed: Out framwork creates a OpenCV videcapture object that is attached ot an input source. The object constantly captures
+										<li>Capture Frames from Input Feed: Our framework creates a OpenCV videcapture object that is attached ot an input source. The object constantly captures
 											frames from the source videofeed. The source videofeed can be a prerecorded video of the queuing environment setup or a live feed (provide camera id as source input) 
 											of the similar setup.</li>
 										<li>Crop and Resize: We crop the input videofeed to only focus on the area with the visible queue, to avoid multiple false positives due to people
@@ -299,7 +298,7 @@
 						Graph 2(Measured over activity dataset seq26 to showcase).
 				</ul>
 
-
+				
 				<ul class="list-unstyled">
 					<li><i class="fa fa-arrow-circle-right pr-10 colored"></i><strong>Detection Ratio and Distribution: </strong></li>
 						We use the annotations in the activity dataset that have actual data for number of people in the frames as a basis for comparing our results from the two detection algorithms. It is assumed that
@@ -307,11 +306,15 @@
 						the annotations file. This ratio is aggregated over the whole execution which gives us the distribution of these ratio over a period. We have visualized some data for both the algorithms as gaussian curves
 						and we notice that for YOLO, the curve is more squeezed with values considerably close to the mean, depicting accuracy and stability. As for HoG, there is high variance in the detection ratio,
 						posibily due to intermittent false positives and hence the distribution is more flattened with respect to mean. Thus, we can assume YOLO to have a better accuracy with a trade-off on detection time
-						as stated before. The data is visualized in Graph 3(Collected over multiple seqeunces). 
+						as stated before. The data is visualized in Graph 3(Collected over multiple sequences). 
 				</ul>
 				<br>
 				<br>
+				<img src="images/g3.PNG" alt="" class="img-center" style="width:500px;height:400px;">
+				<br>
+				<br>
 				<!--<img src="images/screenshot.png" alt="" class="img-center" style="width:800px;height:550px;">-->
+				<h1 class="text-center title" id="conclusion">DEMO</h1>
 				<div style="text-align: center;"> <iframe width="700" height="450" src="https://www.youtube.com/embed/T7lv7uTROMs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 				<p class="text-center"><strong>GUI Demo on Activity Dataset Sequence 26</strong></p>
