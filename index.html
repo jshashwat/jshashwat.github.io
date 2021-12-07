@@ -81,7 +81,7 @@
 												
 												<li><a href="#portfolio">Experiments and Results</a></li>
 											
-												<!--<li><a href="#price">Price</a></li> -->
+
 												<!--<li><a href="#contact">Contact</a></li> -->
 											</ul>
 										</div>
@@ -147,10 +147,10 @@
 					
 					
 			<p class = "p_justify">There have been many advancements in technology that are making our devices smarter and smarter. Taking a small step in this direction, we have designed and developed a queue tracker.
-				 Queue tracker calculates the througput of queues in grocery stores, cafes, and airports etc. This project serves as a basis to study mainstream algorithms in computer vision that will help us to figure
+				 Queue tracker calculates the throughput of queues in grocery stores, cafes, and airports etc. This project serves as a basis to study mainstream algorithms in computer vision that will help us to figure
 				 out an optimum solution for real-time throughput calculation in queues.
 				 In our approach, we have implemented the detection using two algorithms: HoG and YOLO. The aim of this project is to compare the characteristics of HoG and YOLO. Upon experimentation, 
-				 we realised that HoG is must faster than YOLO, however the accuracy is much better in YOLO.
+				 we realised that HoG is must faster than YOLO, however, the accuracy is much better in YOLO.
 			</p>
 			</div>			  
 		</section>
@@ -169,10 +169,10 @@
 					
 			<p class = "p_justify">We have compared two techniques for detecting people in queues and to calculate the throughput of queues: <a target="_blank" href="https://learnopencv.com/histogram-of-oriented-gradients/">HoG (Histogram of Oriented Gradients)</a> and 
 				<a target="_blank" href="https://pjreddie.com/darknet/yolo/">YOLO (You Only Look Once)</a>, a Deep Learning model for object detection. 
-				Our main goal was to compare the results of these two techniques for queue tracking applications. As expected YOLO worked very well with slow as well as fast paced objects in video feeds but the per frame 
-				execution time was higher as compared to HoG. We expected the results from HoG to be comparable because of relatively slow paced movement of objects in video feeds for qeueing applications, which turned out to be realtively true and we will discuss more
-				on that in the experiement and result section. HoG had some abberations in detection with intermittent false positives but YOLO seemed to be quite accurate and stable with the results.</p>
-				<p class = "p_justify">Even though both HoG and YOLO are widely used in multiple applications, our aim is to compare these two in a different real-world application.</p>
+				Our main goal was to compare the results of these two techniques for queue tracking applications. As expected YOLO worked very well with slow as well as fast-paced objects in video feeds but the per frame 
+				execution time was higher as compared to HoG. We expected the results from HoG to be comparable because of relatively slow-paced movement of objects in video feeds for queueing applications, which turned out to be relatively true and we will discuss more
+				on that in the experiments and results section. HoG had some aberrations in detection with intermittent false positives but YOLO seemed to be quite accurate and stable with the results.</p>
+				<p class = "p_justify">Even though both HoG and YOLO are widely used in multiple applications, our aim is to compare these two in a different real-world applications.</p>
 			</div>			  
 		</section>
 
@@ -187,12 +187,12 @@
 							 <ul class="list-unstyled">
 								<li><i class="fa fa-arrow-circle-right pr-10 colored"></i>Data Preprocessing</li>
 									<ul>
-										<li>Capture Frames from Input Feed: Our framework creates a OpenCV videcapture object that is attached ot an input source. The object constantly captures
-											frames from the source videofeed. The source videofeed can be a prerecorded video of the queuing environment setup or a live feed (provide camera id as source input) 
-											of the similar setup.</li>
-										<li>Crop and Resize: We crop the input videofeed to only focus on the area with the visible queue, to avoid multiple false positives due to people
-											that might be present in the background. This process if for now hardcoded from the config file that our source code uses. This assumption is made due to the fact that the camera
-											mounted for such usecase will be fixed and the whole setup will behave in a certain geometry. Thus, these cropping parameters can be provided during intial installation. We have resized
+										<li>Capture Frames from Input Feed: Our framework creates an OpenCV VideCapture object that is attached to an input source. The object constantly captures
+											frames from the source video feed. The source video feed can be a prerecorded video of the queuing environment setup or a live feed (provide camera id as source input) 
+											of a similar setup.</li>
+										<li>Crop and Resize: We crop the input video feed to only focus on the area with the visible queue, to avoid multiple false positives due to people
+											that might be present in the background. This process is for now hardcoded from the config file that our source code uses. This assumption is made due to the fact that the camera
+											mounted for such usecase will be fixed and the whole setup will behave in a certain geometry. Thus, these cropping parameters can be provided during initial installation. We have resized
 											the input frames to our detection algorithm to a max width of 500 pixels.</li>
 										<li>Dataset Used: <a target="_blank" href="https://cvgl.stanford.edu/projects/collective/collectiveActivity.html">Collective Activity Dataset</a>
 											: We will leverage Class ID 4 in the dataset as our Data for Queuing Application.</li>
@@ -202,14 +202,14 @@
 									<ul>
 										<li>Parameters:</li>
 											<ul>
-												<li>win_stride: It defines a step size for the detector window to move in the x and y direction. The step size decides the amount information to be processed in each window, 
-													if the win_stride is small, we will be able to capture fine-grained details. We have chosed a win_stride of 4 to balance the time taken and information processed.
+												<li>win_stride: It defines a step size for the detector window to move in the x and y direction. The step size decides the amount of information to be processed in each window, 
+													if the win_stride is small, we will be able to capture fine-grained details. We have chosen a win_stride of 4 to balance the time taken and information processed.
 												</li>
 												<li>Padding: We have padded the sliding window with 6 pixels. 
 												</li>
 												<li>Scale:Scale defines the factor by which the image is resized at each layer of a pyramid. 
 													A smaller scale influences the number of layers in the image pyramid. 
-													A smaller value will give us better results but will be computationally expensive. This is why we have chose a scale of 1.01
+													A smaller value will give us better results but will be computationally expensive. This is why we have chosen a scale of 1.01.
 													</li>
 											</ul>
 									</ul>
@@ -292,9 +292,9 @@
 				<ul class="list-unstyled">
 					<li><i class="fa fa-arrow-circle-right pr-10 colored"></i><strong>Queue Throughput Time:</strong> </li>
 						Our framework constantly detects and monitors the center points of each detected person using either of the algorithms. We have an imaginary tripline at the start of the queue, with a buffer window to account
-						for slight consideration of aberrations in collision of center point of a person with the line. We consider that a person has crossed the line once the center point for that person crosses the line buffer.
+						for slight consideration of aberrations in the collision of center point of a person with the line. We consider that a person has crossed the line once the center point for that person crosses the line buffer.
 						Difference between two collisions is the throughput time for the person that just left. We can maintain a cumulative average of this after every collision. This data helps to know queue efficiency in real-time, 
-						which can further be multiplied to the total number of people present in the line, to get waiting time for that queue. Both the algorithms perform equally well in calculating the througput times as depicted in
+						which can further be multiplied to the total number of people present in the line, to get waiting time for that queue. Both the algorithms perform equally well in calculating the throughput times as depicted in
 						Graph 2(Measured over activity dataset seq26 to showcase).
 				</ul>
 
@@ -303,9 +303,9 @@
 					<li><i class="fa fa-arrow-circle-right pr-10 colored"></i><strong>Detection Ratio and Distribution: </strong></li>
 						We use the annotations in the activity dataset that have actual data for number of people in the frames as a basis for comparing our results from the two detection algorithms. It is assumed that
 						the annotations file given as input is in accordance with the activity data format. Our framework calculates detection ratio as the ratio of people detected in the frame and the number of people in
-						the annotations file. This ratio is aggregated over the whole execution which gives us the distribution of these ratio over a period. We have visualized some data for both the algorithms as gaussian curves
+						the annotations file. This ratio is aggregated over the whole execution which gives us the distribution of these ratios over a period. We have visualized some data for both the algorithms as gaussian curves
 						and we notice that for YOLO, the curve is more squeezed with values considerably close to the mean, depicting accuracy and stability. As for HoG, there is high variance in the detection ratio,
-						posibily due to intermittent false positives and hence the distribution is more flattened with respect to mean. Thus, we can assume YOLO to have a better accuracy with a trade-off on detection time
+						possibily due to intermittent false positives and hence the distribution is more flattened with respect to mean. Thus, we can assume YOLO to have a better accuracy with a trade-off on detection time
 						as stated before. The data is visualized in Graph 3(Collected over multiple sequences). 
 				</ul>
 				<br>
@@ -330,16 +330,23 @@
 			<div class="container no-view" data-animation-effect="fadeIn">
 				<h1 id="qualitative" class="title text-center">Qualitative Analysis</h1>
 				<ul>
-					<li>First difference that we spotted in the results was the detection of false positives in cases where people crossed in the frames, eclipsing the queue for a short while. As seen from the figure below
-						HoG seems to have detected the false positive but the partial eclipsed person in the queue is not detected. As for Yolo, the accuracy is so high that both people are detected. For our application, we assume
-						that the camera used for such purpose will be stratigically mounted to make sure no such cases come through where the framework has to deal with these kind of false positives. Such cases will only cause wrong results in
-						throughput calculation if the person is moving in the same direction as queue.
+					<li>The first difference that we spotted in the results was the detection of false positives in cases where people crossed in the frames, eclipsing the queue for a short while. As seen from the figure below
+						HoG seems to have detected the false positive but the partially eclipsed person in the queue is not detected. As for Yolo, the accuracy is so high that both people are detected. For our application, we assume
+						that the camera used for such purpose will be strategically mounted to make sure no such cases come through where the framework has to deal with these kinds of false positives. Such cases will only cause wrong results in
+						throughput calculation if the person is moving in the same direction as the queue.
 					</li>
 						<br>
 						<br>
 						<img src="images/QA1.PNG" alt="" class="img-center" style="width:800px;height:550px;">
-					<li>Crop and Resize: </li>
-					<li>Dataset Used: </li>
+					<br>
+					<br>
+					<li>In the above images we can also notice that the bounding boxes that are returned from the two algorithms have difference in accuracy of bounding people. for HOG it can be clearly seen that 
+						the boxes are less accurately fitting some people where as YOLO is highly accurate with the bounds. A good accuracy in such bounding will give us the best centroid location for the person advanced
+						hence the collision time calculated will be more accurate in YOLO.
+						We still observe that the throughput accuracy is almost identical for both the algorithms which is due to the fact the people cross the imaginary line relatively quickly, thus the time delta between
+						throughputs from two algorithms is similar. This further, makes a case for HoG being useful for this application despite being less accurate in some areas.
+					</li>
+					
 				</ul>
 				
 			</div>			  
@@ -350,8 +357,8 @@
 			<div class="container">
 				
 				<h1 class="text-center title" id="conclusion">Conclusion</h1>
-				Our report compares two well known object detection techniques HoG and YOLO for a very specific application for tracking people in a queue and measure throughput for the queues.
-				We have dicussed the merits and demerits of both the algorithm using our experimental setup parameters mentioned above. Based on the results we observe that despite HoG being a relatively
+				Our report compares two well-known and widely used object detection techniques HoG and YOLO for a very specific application for tracking people in a queue and measure throughput for the queues.
+				We have dicussed the merits and demerits of both algorithms using our experimental setup parameters mentioned above. Based on the results we observe that despite HoG being a relatively
 				less accurate object detection algorithm, it seemed to match YOLO with respect to our use case, however there is a trade-off in runtime. As future scope, we can modify our framework to get the best 
 				out of both algorithms with a hybrid model. The idea is to use HoG as the main detection algorithm due to its faster execution time and intermittently(every X frames depending upon the relative movements
 				of people within the input image) leverage the accuracy of YOLO to improve on the false positives that are seen in HoG.  
@@ -360,7 +367,7 @@
 				<br>
 				<h1 class="text-center title" id="ACK">Acknowledgement</h1>
 				We want to thank Dr. Lynn Abbott for teaching and providing us with the required skill set to work on Computer Vision at such an intricate level. 
-				In addition, the project has enabled us to work on real-world computer vision problems with in depth knowledge of basic, yet important foundational algorithms and concepts. 
+				In addition, the project has enabled us to work on real-world computer vision problems with in-depth knowledge of basic, yet important foundational algorithms and concepts. 
 				A special thanks to our peers in the course, who have been part of this short learning journey.
 			<br>
 			<br>
