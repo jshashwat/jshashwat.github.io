@@ -338,8 +338,15 @@
 						<br>
 						<br>
 						<img src="images/QA1.PNG" alt="" class="img-center" style="width:800px;height:550px;">
-					<li>Crop and Resize: </li>
-					<li>Dataset Used: </li>
+					<br>
+					<br>
+					<li>In the above images we can also notice that the bounding boxes that are returned from the two algorithms have difference in accuracy of bounding people. for HOG it can be clearly seen that 
+						the boxes are less accurately fitting some people where as YOLO is highly accurate with the bounds. A good accuracy in such bounding will give us the best centroid location for the person advanced
+						hence the collision time calculated will be more accurate in YOLO.
+						We still observe that the throughput accuracy is almost identical for both the algorithms which is due to the fact the people cross the imaginary line relatively quickly, thus the time delta between
+						throughputs from two algorithms is similar. This further, makes a case for HoG being useful for this application despite being less accurate in some areas.
+					</li>
+					
 				</ul>
 				
 			</div>			  
